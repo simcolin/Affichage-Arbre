@@ -1,7 +1,5 @@
 package DessinArbre;
 
-import sun.java2d.xr.MutableInteger;
-
 import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -106,9 +104,8 @@ public class Arbre extends Canvas {
 
 	public int[] dessinGauche(Sommet s, int[] x, int y) {
 		s.setAbscisse(x[y]);
+		x[y] = x[y]+1;
 		s.setOrdonnee(y);
-		if(s.getEnfants().isEmpty())
-			x[y]++;
 		for( Sommet fils : s.getEnfants())
             x = dessinGauche(fils,x,y+1);
         return x;

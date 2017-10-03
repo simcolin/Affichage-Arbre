@@ -1,0 +1,69 @@
+%!PS-Adobe-3.0
+%%DocumentMedia: DimPage 500 65 0 white Plain
+
+1 setlinewidth
+/decalage 3 def
+
+% définition d'un carré (bleu)
+/cote-carre 20 def
+/demi-cote-carre cote-carre 2 div def
+/ordonnee-carres 0 def
+/carre { 
+	0 0 0 setrgbcolor
+	cote-carre 0 rlineto % de la position de départ vers l'est (l'abscisse croit)
+	0 cote-carre rlineto % de la position actuelle vers le nord (l'ordonnée croit)
+	cote-carre neg 0 rlineto % de la position actuelle vers l'ouest (l'abscisse décroit)
+	0 cote-carre neg rlineto % de la position actuelle vers le sud (l'ordonnée décroit) pour retour à la position de départ
+	gsave
+	0 0 1 setrgbcolor
+	fill % carré rempli
+	grestore
+	stroke } def
+% dessin de plusieurs carrés
+/nb-carres 9 def
+1 1 nb-carres {
+	/i exch def % on récupère, dans la variable i, l'indice caché de la boucle
+	cote-carre decalage mul i 1 sub mul ordonnee-carres moveto % on se décale à l'est (abscisses)
+	carre % on trace le carré
+} for
+
+% définition d'un disque (vert) avec deux paramètres (empilés lors de l'appel de la procédure)
+/rayon-disque demi-cote-carre def
+/diametre-disque rayon-disque 2 mul def
+/ordonnee-disques 50 def
+/disque { 
+	newpath
+	0 0 0 setrgbcolor
+	/y exch def % on récupère le dernier paramètre à savoir l'ordonnée du disque
+	/x exch def % on récupère le premier paramètre à savoir l'abscisse du disque
+	x y rayon-disque 0 360 arc % un cercle
+	gsave
+	0 1 0 setrgbcolor
+	fill % le cercle devient un disque
+	grestore
+	stroke } def
+% dessin de plusieurs disques
+% N. B. : cette structure de contrôle n'a été choisie que pour des raisons pédagogiques
+/nb-disques 5 def
+/i-disques 1 def % initialisation de l'indice de boucle
+{
+	diametre-disque decalage mul i-disques 1 sub mul rayon-disque add ordonnee-disques disque % on se décale à l'est (abscisses) et on trace le disque
+	/i-disques i-disques 1 add def % incrémentation de l'indice de boucle
+	i-disques nb-disques gt { exit } if % test de sortie de boucle
+} loop
+
+% dessin de plusieurs traits
+/nb-traits 7 def
+1 0 0 setrgbcolor
+2 setlinewidth
+nb-traits {
+	gsave
+	demi-cote-carre demi-cote-carre moveto % on se décale
+	demi-cote-carre ordonnee-disques ordonnee-carres sub lineto % on dessine le trait
+	stroke
+	grestore
+	cote-carre decalage mul 0 translate % on translate l'origine des coordonnées
+} repeat
+
+showpage
+%EOF

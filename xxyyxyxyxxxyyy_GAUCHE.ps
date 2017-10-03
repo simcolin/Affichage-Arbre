@@ -1,0 +1,39 @@
+%!PS-Adobe-3.0
+%%DocumentMedia: DimPage 800 400 0 white Plain
+2 setlinewidth
+/cote 16 def
+/demi-cote cote 2 div def
+/carre {
+	0 0 1 setrgbcolor
+	/y exch def
+	/x exch def
+	x demi-cote sub y demi-cote sub moveto
+	cote 0 rlineto
+	0 cote rlineto
+	cote neg 0 rlineto
+	0 cote neg rlineto
+	gsave
+	fill
+	grestore
+	stroke } def
+/disque {
+	newpath
+	0 1 0 setrgbcolor
+	/y exch def
+	/x exch def
+	x y demi-cote 0 360 arc
+	gsave
+	fill
+	grestore
+	stroke } def
+/trait {
+	1 0 0 setrgbcolor
+	/y2 exch def
+	/x2 exch def
+	x2 y2 moveto
+	/y1 exch def
+	/x1 exch def
+	x1 y1 lineto
+	stroke } def
+showpage
+%EOF
