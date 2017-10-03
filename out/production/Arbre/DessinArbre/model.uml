@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_j15dgCepEeS7SoQdE6lZYg" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_S5iNkCeqEeS7SoQdE6lZYg" name="Sommet">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rNW90CeqEeS7SoQdE6lZYg" name="abscisse" visibility="private" type="_WyQ5ACeyEeS7SoQdE6lZYg" isUnique="false"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uHGyICeqEeS7SoQdE6lZYg" name="ordonnée" visibility="private" type="_WyQ5ACeyEeS7SoQdE6lZYg" isUnique="false"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2cVQUCetEeS7SoQdE6lZYg" name="Sommet"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3b5P4CetEeS7SoQdE6lZYg" name="ajouterEnfant">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mFiyoCeuEeS7SoQdE6lZYg" name="enfant" type="_S5iNkCeqEeS7SoQdE6lZYg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_4_ZC8CetEeS7SoQdE6lZYg" name="estFeuille">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_a8pgsCewEeS7SoQdE6lZYg" type="_RYsMQCeyEeS7SoQdE6lZYg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7fnkACetEeS7SoQdE6lZYg" name="premierEnfant">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QeuwUCewEeS7SoQdE6lZYg" type="_S5iNkCeqEeS7SoQdE6lZYg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_89X7cCetEeS7SoQdE6lZYg" name="dernierEnfant">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_TEM9wCewEeS7SoQdE6lZYg" type="_S5iNkCeqEeS7SoQdE6lZYg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZchZcCeqEeS7SoQdE6lZYg" name="racine de l'arbre" visibility="private" memberEnd="_ZchZcSeqEeS7SoQdE6lZYg _ZcbS0CeqEeS7SoQdE6lZYg" navigableOwnedEnd="_ZcbS0CeqEeS7SoQdE6lZYg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ZchZcSeqEeS7SoQdE6lZYg" name="arbre" visibility="private" type="_f6tc4Li_EeaiBftsdGNh7A" association="_ZchZcCeqEeS7SoQdE6lZYg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZchZcieqEeS7SoQdE6lZYg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZchZcyeqEeS7SoQdE6lZYg" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_eBtJ8LhpEeawU66QTS2hTA" value=""/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ZcbS0CeqEeS7SoQdE6lZYg" name="racine" visibility="private" type="_S5iNkCeqEeS7SoQdE6lZYg" association="_ZchZcCeqEeS7SoQdE6lZYg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZcbS0SeqEeS7SoQdE6lZYg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZcbS0ieqEeS7SoQdE6lZYg" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_lTYZECeyEeS7SoQdE6lZYg">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_kk4YgCerEeS7SoQdE6lZYg" name="relation parent / enfants" visibility="private" memberEnd="_kk4YgSerEeS7SoQdE6lZYg _kkog4CerEeS7SoQdE6lZYg" navigableOwnedEnd="_kkog4CerEeS7SoQdE6lZYg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_kk4YgSerEeS7SoQdE6lZYg" name="parent" visibility="private" type="_S5iNkCeqEeS7SoQdE6lZYg" association="_kk4YgCerEeS7SoQdE6lZYg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kk4YgierEeS7SoQdE6lZYg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kk4YgyerEeS7SoQdE6lZYg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_kkog4CerEeS7SoQdE6lZYg" name="enfants" visibility="private" type="_S5iNkCeqEeS7SoQdE6lZYg" association="_kk4YgCerEeS7SoQdE6lZYg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kkog4SerEeS7SoQdE6lZYg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kkog4ierEeS7SoQdE6lZYg" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_u4sYYCewEeS7SoQdE6lZYg" name="MéthCalcAbs">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yKBmQCewEeS7SoQdE6lZYg" name="PREMIER"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zgzzACewEeS7SoQdE6lZYg" name="MILIEU"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0le8ECewEeS7SoQdE6lZYg" name="GAUCHE"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-TXhMCexEeS7SoQdE6lZYg" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_RYsMQCeyEeS7SoQdE6lZYg" name="boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_WyQ5ACeyEeS7SoQdE6lZYg" name="float"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_4oRBYD1vEeSj3cXIBXO0iA" name="Feuille">
+    <generalization xmi:type="uml:Generalization" xmi:id="_94yDUD1wEeSj3cXIBXO0iA" general="_8E_m8D1vEeSj3cXIBXO0iA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6FDvgD1vEeSj3cXIBXO0iA" name="Noeud">
+    <generalization xmi:type="uml:Generalization" xmi:id="_-0Q0ID1wEeSj3cXIBXO0iA" general="_8E_m8D1vEeSj3cXIBXO0iA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8E_m8D1vEeSj3cXIBXO0iA" name="Sommet" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PdZJkD1xEeSj3cXIBXO0iA" name="relation parent / enfants" memberEnd="_PdZJkT1xEeSj3cXIBXO0iA _PdMVQD1xEeSj3cXIBXO0iA">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PdZJkT1xEeSj3cXIBXO0iA" name="parent" visibility="private" type="_6FDvgD1vEeSj3cXIBXO0iA" association="_PdZJkD1xEeSj3cXIBXO0iA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PdZJkj1xEeSj3cXIBXO0iA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PdZJkz1xEeSj3cXIBXO0iA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PdMVQD1xEeSj3cXIBXO0iA" name="enfants" visibility="private" type="_8E_m8D1vEeSj3cXIBXO0iA" aggregation="shared" association="_PdZJkD1xEeSj3cXIBXO0iA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PdMVQT1xEeSj3cXIBXO0iA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PdMVQj1xEeSj3cXIBXO0iA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_f6tc4Li_EeaiBftsdGNh7A" name="Arbre">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_wDllkCetEeS7SoQdE6lZYg" name="Arbre"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_R_ymsLiqEeazZfIooTINTg" name="créerArbre" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_lRIUgLiqEeazZfIooTINTg" name="motParenth" type="_-TXhMCexEeS7SoQdE6lZYg" effect="read"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_x7dtMCetEeS7SoQdE6lZYg" name="calculerCoordonnées" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Q27sYLrHEeaszLoDfI5aTw" name="méthCalcAbs" type="_u4sYYCewEeS7SoQdE6lZYg"/>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>
